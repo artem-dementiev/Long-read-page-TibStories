@@ -1,0 +1,24 @@
+.up-btn, .down-btn{
+	box-sizing: border-box;
+	position: fixed;
+	right: 0;
+	/*bottom: 1em; */
+	width: 36px;
+	height: 36px;
+	background-color: #104901;
+	text-align:center;
+	cursor: pointer;
+	/* display: none; */ 
+}
+.up-btn{
+	top:84%;
+}
+.down-btn{
+	top:89%;
+}
+.up-btn i, .down-btn i {
+	position: relative;
+	line-height: 1.8;
+	font-size: 1.2em;
+	color: #dadada;
+}

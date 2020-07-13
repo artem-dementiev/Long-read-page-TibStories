@@ -1,0 +1,36 @@
+
+.article1, .article2, .article3, .article4, .article5, .article6, .article7, .article8, .article9, .article10,
+.article11, .article12, .article13, .article14, .article15, .article16, .article17, .article18, .article19, .article20, 
+.article21, .article22 {
+	background: #DBDBDB;
+	color: black;
+}
+
+.block-inner {
+  width:75%;
+  display: flex;
+  margin: auto;
+}
+.image-container {
+  display: block;
+  height: 0;
+  width: 100%;
+  height: /*100px*/;
+  padding-top: 70%;
+  overflow: hidden;
+  position: relative;
+}
+.image-container > img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    max-width: none;
+    max-height: none;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+  }

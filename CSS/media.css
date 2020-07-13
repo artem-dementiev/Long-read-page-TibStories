@@ -1,0 +1,70 @@
+ /*767*/
+ @media only screen and (max-width: 769px) {   
+	.loader {     
+	/* Здесь размер файла уменьшен чтобы  увеличить скорость загрузки страницы с мобильных устройств  */    
+	background: url(../images/tiberium-world-phoneScreen-min.jpg) center center no-repeat fixed; background-size: cover;}
+	.nav-toggle {font-size: 1em; right: 320px;}
+	[id='nav-toggle']:checked ~ .nav > .nav-toggle {right: 13px;}
+	.up-btn {    top: 82%;}
+    .down-btn {    top: 88%;}
+	.up-btn, .down-btn, .info-btn {right: 0px;}
+	.neon{font-size: 4em;}
+	.article section{
+	font-size: 18px;
+	line-height: 1.2em;
+	padding-left: 5px;
+	text-align: left;
+	padding: 0 5px;
+	}
+	.article .articleHeader h2{font-size: 22px;}
+	.article h3{font-size: 20px;}
+	.article>section, .article>h3{margin:10px 20px 10px 20px;width: initial;}
+	.nav > ul > li{line-height: 1.5;}
+} 
+@media only screen and (max-width: 557px) { 
+	.neon{font-size: 2.2em;}
+	.up-btn, .down-btn, .info-btn {right: 10px;}
+	.nav-toggle {font-size: 1em; right: 329px;}
+	.up-btn {top: 70%;}
+	.down-btn {top: 80%;}
+	.info-btn {top: 89.5%;}
+}
+@media only screen and (max-width: 426px) { 
+	.nav {width: 385px;box-shadow: none;background:none; right: -1320px;}
+	.nav-toggle{right: 1320px;}
+    [id='nav-toggle']:checked ~ .nav{background:#3E7131;}
+    .up-btn, .down-btn, .info-btn {right: 0px;}
+    	.up-btn {top: 75%;}
+	.down-btn {top: 83%;}
+	.info-btn {top: 91.5%;}
+	.neon{font-size: 2em;}
+/*	.chapter{ 
+		background:url(images/bgForPhones.png);
+	  background:#0f0f0f;color: #dadada;}*/
+	.article .articleHeader h2, .article h3 {color: #dadada;}
+	#chapter0, #chapter1,#chapter2,#chapter3,#chapter4,#chapter5,#chapter6,#chapter7,#chapter8,#chapter9,#chapter10
+	,#chapter11,#chapter12,#chapter13,#chapter14,#chapter15,#chapter16,#chapter17,#chapter18,#chapter19,#chapter20{background:#0f0f0f; color: #dadada;}
+
+ }
+ @media screen and (max-width: 375px) {
+ 	.nav {width: 335px;box-shadow: none;background:none;}
+ 	.nav-toggle {    right: 1320px;}
+ 	/*25*/
+	[id='nav-toggle']:checked ~ .nav{background:#3E7131;}
+	    .popup{width: 300px;}
+	.up-btn, .down-btn, .info-btn {right: 0px;}  
+	.article{background-color:#0f0f0f;color: #dadada;}
+	.article .articleHeader h2, .article h3 {color: #dadada;}
+	#chapter0, #chapter1,#chapter2,#chapter3,#chapter4,#chapter5,#chapter6,#chapter7,#chapter8,#chapter9,#chapter10
+	,#chapter11,#chapter12,#chapter13,#chapter14,#chapter15,#chapter16,#chapter17,#chapter18,#chapter19,#chapter20{background:#0f0f0f;}
+ }
+ @media screen and (max-width: 320px) {
+ 	.nav-toggle {right: 1320px;}
+	.up-btn, .down-btn, .info-btn {right: 0px;}
+ 	.nav {width: 280px;box-shadow: none;background:none;}
+	[id='nav-toggle']:checked ~ .nav{background:#3E7131;}
+    .article{background-color:#0f0f0f;color: #dadada;}
+    .article .articleHeader h2, .article h3 {color: #dadada;}
+	#chapter0, #chapter1,#chapter2,#chapter3,#chapter4,#chapter5,#chapter6,#chapter7,#chapter8,#chapter9,#chapter10
+	,#chapter11,#chapter12,#chapter13,#chapter14,#chapter15,#chapter16,#chapter17,#chapter18,#chapter19,#chapter20{background:#0f0f0f;}
+ }

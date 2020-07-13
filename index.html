@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<!-- сайт с коментариями -->
+	<meta charset="UTF-8">
+	<title>TibStories</title>
+	<link rel="icon" href="images/favicon.gif" type="image/gif">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/normalize.css">
+	<link rel="stylesheet" href="CSS/TS_style.css">
+	<link rel="stylesheet" href="CSS/right-nav-style.css">
+	<link rel="stylesheet" href="CSS/up-down-btn.css">
+	<link rel="stylesheet" href="CSS/info.css">
+	
+	<link rel="stylesheet" href="CSS/chapters.css">
+	<link rel="stylesheet" href="CSS/secondTypeDispaly.css">
+	<link rel="stylesheet" href="CSS/media.css">
+	<script src="jquery.js"></script>
+	<script src="TS_script.js"></script>
+	<script src="chapters.js"></script>
+	<script>
+		function loader(isFirstLoadPage, fadeIN, delayy, fadeOUT, secondDelay){
+			/*Preloader*/
+			// var fadeIN, delayy, fadeOUT, secondDelay=0;
+			if(isFirstLoadPage == 1){
+			document.body.style.visibility = "hidden";}else{
+				$("body").hide(); $(".loader").fadeIn("fast");
+			}
+
+			$(".loader").delay(delayy).fadeOut(fadeOUT);
+		    $("body").fadeIn(fadeIN);
+		    
+		    $("body").delay(secondDelay).css("visibility","visible");
+		}
+		$(window).on('load', function () {
+			loader(1, 2500, 3200, 1000, 5200);
+			var chapters = [];
+			var result = {};
+			var h3 =[];
+			var div = [];
+			var frez = document.querySelector("main");
+			var intro = document.querySelector(".intro");
+			var ancors = [];
+			var navAnc=document.querySelector("header>nav.nav>ul.ancors");
+			var articleHeader;
+			var typeDisplay=0;
+			function splitString(stringToSplit, separator) {
+			  	return arrayOfStrings = stringToSplit.split(separator);
+			}
+///////////////////////////////////////////////////////////////////////////////////////////
+				var radio = document.getElementsByName('info');
+				for (var i = 0; i < radio.length; i++) {
+					radio[i].onchange = testRadio;
+				}
+				function testRadio(){
+					typeDisplay=1;
+				}
+///////////////////////////////////////////////////////////////////////////////////////////
+			load(intro, 0, 1);
+			var season1= document.querySelector('#season1');
+			var season2= document.querySelector('#season2');
+			var season3= document.querySelector('#season3');
+			season1.onclick = function(){
+				load(frez, 1, 22);
+				loader(0, "6500", 5200, 1000, 5200);
+			}
+			season2.onclick = function(){
+				load(frez, 22, 42);
+				loader(0, "6500", 5200, 1000, 5200);
+			}
+			season3.onclick = function(){
+				load(frez, 42, 44);
+				loader(0, "6500", 5200, 1000, 5200);
+			}
+			function load(frez, startFrom, end) {
+				frez.innerHTML='';
+				for (var i = startFrom; i < end; i++) {
+					chapters[i]=getconfig(i);
+				// console.log(chapters[i]);
+				h3[chapters[i].id] = chapters[i].name;
+				result[chapters[i].id] = chapters[i].text;
+				div[i] = document.createElement("div");
+				div[i].id = `chapter ${i}`;
+				div[i].className = `chapter`;
+
+				if(i==0||i==21){
+					switch(i){
+						case 0: articleHeader = "Вступление"; break;
+						case 21: articleHeader = "Окончание"; break;
+					}
+				}else{
+					articleHeader = `Глава ${i}`;
+				}
+				if(result[i]===undefined || result[i]==''){
+					result[i]="Ошибка загрузки. Текст отсутствует.";
+				}else{
+					//делить на секции
+				}
+				if(h3[i]===undefined){ h3[i]='';}
+				// Создаем главу
+				if(typeDisplay==0){
+				var readyString =`<article  class="article a" id="chapter${i}">
+										<header class="articleHeader">
+											<h2 class="articleHeader">${articleHeader}</h2>
+										</header>
+										<h3>${h3[i]}</h3>
+										<section>`;
+									}else{
+				var readyString =`<article  class="article article${i}" >
+										<article id="chapter${i}"></article>
+										<header class="articleHeader">
+											<h2 class="articleHeader">${articleHeader}</h2>
+										</header>
+										<h3>${h3[i]}</h3>`;
+										if(i==0||i==21){
+											readyString+=`<section>`;
+										}else{
+											readyString+=`<div class="block-inner">
+										<div class="image-container">
+										<img class="imgchapter imgchapter${i}" src="images/Chapter_images/Season1/S1-C${i}-p1.png" alt="">
+										<img class="imgchapter imgchapter${i}" src="images/Chapter_images/Season1/S1-C${i}-p1.jpeg" alt="">
+										<img class="imgchapter imgchapter${i}" src="images/Chapter_images/Season1/S1-C${i}-p1.jpg" alt="">
+										</div>
+										</div>
+										<section>`;
+										}
+
+									} 
+				//Обрезаем текст
+				var temp = splitString(result[i], /\./);
+				// console.log(temp.length);
+				if(!temp.length==undefined || !temp.length == null){	}else{
+					temp.forEach(function(item){
+						if(!item==''){
+							item=`<p>${item}.</p>`;
+							readyString+=item;
+							// console.log(item);
+						}
+					});
+				}
+				readyString+=			`</section>
+										<footer class="chapterFooter"></footer>
+								  </article>`;
+				// console.log(readyString);
+				div[i].innerHTML = readyString;
+				frez.appendChild(div[i]);
+				ancors[i] = document.createElement("li");
+				// Создаем ссылку на главу
+				ancors[i].innerHTML =`<a href="#chapter${i}">${articleHeader}</a>`;
+				navAnc.appendChild(ancors[i]);
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+	<div class="banner">
+		<h1 class="neon" data-text="[Tiberium_Stories]">[Tiberium_Stories]</h1>
+	</div>
+	<header>
+		<!--Скрытый checkbox, отвечающий за переключение панели, `id` атрибут предназначен для связки с атрибутом `for` тега <label>
+	    Атрибут `hidden` указывает состояние «скрытый» у текущего элемента-->
+		<input type="checkbox" id="nav-toggle" hidden>
+	    <!--Выдвижную панель размещаете ниже флажка (checkbox), но не обязательно 
+	    непосредственно после него, например можно и в конце страницы-->
+		<nav class="nav">
+	    <!--Метка с именем `id` чекбокса в `for` атрибуте-->
+	    	<label for="nav-toggle" class="nav-toggle" onclick></label>
+	    	<h2 class="logo">Содержание</h2>
+	    	<ul class="ancors"></ul>
+		</nav>
+	    <!-- Маска (затемнение) основного контента при включенной панели-->
+	    <div class="mask-content"></div>
+    </header>
+	<main role="main">
+		<div class="intro"></div>
+		<div class="seasons">
+			<a href='#' id="season1" class="season season-btn"><span>Сезон 1</span></a>
+			<a href='#' id="season2" class="season season-btn"><span>Сезон 2</span></a>
+			<a href='#' id="season3" class="season season-btn"><span>Сезон 3</span></a>
+		</div>
+	</main>
+	<footer class="footer">
+        <h2>Our community</h2>
+        <div class="footer-social-icons">
+	       <a class="footer-social-icons-btn" href="https://discord.gg/umpBWr4" title="Discord" target="_blank"><i class="fab fa-discord"></i></a> <!-- f392 -->
+	       <a class="footer-social-icons-btn" href="https://www.youtube.com/channel/UC1Q5DqUPioySpV-pMSIiRaQ" target="_blank"><i class="fab fa-youtube" title="Youtube"></i></a>  <!-- f167 -->
+	       <a class="footer-social-icons-btn" href="https://vk.com/commandandconquer3kw" title="Vkontakte" target="_blank"><i class="fab fa-vk"></i></a> <!-- f189 -->
+        </div> 
+        <span class="copyright">Все материалы данного сайта являются объектами авторского права (в том числе дизайн). 
+Запрещается копирование, распространение (в том числе путем копирования на другие сайты и ресурсы в Интернете) или любое иное использование информации и объектов без предварительного согласия правообладателя. <br>&copy;BloodHammer, 2019  </span>
+	</footer>
+
+	<div class="up-btn"><i class="fas fa-chevron-up"></i></div>
+	<div class="down-btn"><i class="fas fa-chevron-down"></i></div>
+	<div class="info">
+		<div class="popup">
+			<p>Текст можеть содержать ошибки.</p>
+			<p>Разделить текст на  отдельные смысловые абзацы с помощью кода невозможно (а читать всю историю у меня нет времени и желания), да и сам оригинал в некоторых местах являеться сплошным текстом.</p>
+			<p>Способы отображения глав:</p>
+			<p>1)Задний фон текста - картинка.</p>
+			<p>2)Задний фон текста - белый цвет, картинка перед главой.</p>
+			<p><input type="radio"  name="info" checked value ="1">1)</p>
+			<p><input type="radio"  name="info" value ="2">2)</p>
+			<p>Для изменения стоит перед выбором сезона изменить значение.</p>
+			<div class="close-popup"></div>
+		</div>
+	</div>
+	<div class="info-btn"><i class="fas fa-info-circle"></i></div>
+	<div class="loader">
+		<div class="loader_out">
+			<div class="loader_in"></div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">(function(w,doc) {
+if (!w.__utlWdgt ) {
+    w.__utlWdgt = true;
+    var d = doc, s = d.createElement('script'), g = 'getElementsByTagName';
+    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+    s.src = ('https:' == w.location.protocol ? 'https' : 'http')  + '://w.uptolike.com/widgets/v1/uptolike.js';
+    var h=d[g]('body')[0];
+    h.appendChild(s);
+}})(window,document);
+</script>
+<div data-mobile-view="false" data-share-size="20" data-like-text-enable="false" data-background-alpha="0.0" data-pid="1865517" data-mode="share" data-background-color="#d02525" data-hover-effect="rotate-cw" data-share-shape="round-rectangle" data-share-counter-size="12" data-icon-color="#ffffff" data-mobile-sn-ids="vk.tm.fb.tw." data-text-color="#ffffff" data-buttons-color="#ffffff" data-counter-background-color="#b52626" data-share-counter-type="separate" data-orientation="fixed-right" data-following-enable="false" data-sn-ids="vk.tm.fb.tw." data-preview-mobile="false" data-selection-enable="true" data-exclude-show-more="false" data-share-style="10" data-counter-background-alpha="0.0" data-top-button="false" class="uptolike-buttons" data-title="Тибериевые Истории Нарвека" data-description="Научно-фантастическая литература от Нарвека"></div>
+
+</body>
+</html>

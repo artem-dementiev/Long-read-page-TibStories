@@ -1,0 +1,103 @@
+
+#chapter0{
+	background: #8ce9876b;
+}
+#chapter1{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C1-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter2{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C2-p1.png) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter3{
+ 	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C3-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter4 {
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C4-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+.imgchapter5, .imgchapter16-1, .imgchapter16-2, .imgchapter19-1, .imgchapter19-2{
+	width:25%;
+	height: 25%;
+}
+#chapter6{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C6-p1.jpeg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter7{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C7-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter8{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C8-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter9{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C9-p1.png) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter10{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C10-p1.png) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter11{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C11-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter12{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C12-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter13{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C13-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter14{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C14-p1.png) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter15{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C15-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+ #chapter16{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C16-p1.png) center center no-repeat fixed;
+	background-size: cover;
+} 
+/* #chapter16{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C16-p1.png)center center no-repeat fixed;
+	background-size: cover;
+} */
+#chapter17{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C17-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter18{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C18-p1.png) center center no-repeat fixed;
+	background-size: cover;
+}
+ #chapter19{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C19-p1.jpg) center center no-repeat fixed;
+	background-size: cover;
+} 
+/* #chapter19{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C19-p1.jpg)center center no-repeat fixed;
+	background-size: cover;
+} */
+#chapter20{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-C20-p1.png) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapterEND{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../images/Chapter_images/Season1/S1-end.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+#chapter1, #chapter2, #chapter3, #chapter4, #chapter6, #chapter7,
+#chapter8, #chapter9, #chapter10, #chapter11, #chapter12, #chapter13,
+#chapter14, #chapter15, #chapter16, #chapter17, #chapter18, #chapter19,
+#chapter20, #chapterEND
+{
+	color:#dadada;
+}
